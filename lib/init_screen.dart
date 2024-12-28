@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tac_toe_app/game_screen.dart';
 
 class InitScreen extends StatelessWidget {
   const InitScreen({super.key});
@@ -53,7 +54,6 @@ class InitScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
               Text(
                 'Pick who goes first?',
                 style: TextStyle(
@@ -68,13 +68,16 @@ class InitScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GameScreen()));
+                    },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      shape :RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(32)
-                      )
-                    ),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32))),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Image(
@@ -86,10 +89,8 @@ class InitScreen extends StatelessWidget {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
-                        shape :RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(32)
-                        )
-                    ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32))),
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Image(
@@ -99,7 +100,6 @@ class InitScreen extends StatelessWidget {
                   ),
                 ],
               ),
-
             ],
           ),
         ),
